@@ -11,10 +11,11 @@
 
 <ion-content padding class="card-background-page">
   <ion-card>
-  <ion-item *ngFor="let house of houses | async" (press)="showOptions(house.$key, house.title)">
+  <ion-item *ngFor="let house of houses | async" [navPush]="postpage" (press)="showOptions(house.$key, house.title)">
   <img src="http://img.viveusa.mx/sites/default/files/styles/interior_nodo/public/field/image/departamento-ny-vista-1.jpg?itok=nJq99ELl">
     <div class="card-title">{{house.title}}</div>
     <div class="card-subtitle">{{house.description}}</div>
   </ion-item>
 </ion-card>
+
 </ion-content>

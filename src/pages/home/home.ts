@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PostPage } from '../post/post';
+import { LoginPage } from '../login/login';
 
 import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
 
@@ -9,10 +11,21 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
 })
 export class HomePage {
 
+  postpage=PostPage;
   houses: FirebaseListObservable<any>;
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, af: AngularFire, public actionSheetCtrl: ActionSheetController) {
     this.houses=af.database.list('/houses');
+    /*if (!this.isLoggedin()) {
+      console.log('You are not logged in');
+      this.navCtrl.push(LoginPage);
+    }*/
   }
+
+  /*isLoggedin() {
+    if (window.localStorage.getItem('currentuser')) {
+      return true;
+    }
+  }*/
 
   addHouse(){
   let prompt = this.alertCtrl.create({

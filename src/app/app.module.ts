@@ -4,11 +4,13 @@ import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
+import { PostPage } from '../pages/post/post';
 import { TabsPage } from '../pages/tabs/tabs';
+import { LoginPage } from '../pages/login/login';
 
 // Import the AF2 Module
 import { AngularFireModule } from 'angularfire2';
- 
+
 // AF2 Settings
 export const firebaseConfig = {
   apiKey: "AIzaSyBLCQIxuJkVuxs6xUC4lWDKwGrRKQ0AmWo",
@@ -23,7 +25,9 @@ export const firebaseConfig = {
     AboutPage,
     ContactPage,
     HomePage,
-      TabsPage
+      TabsPage,
+    PostPage,
+    LoginPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -35,7 +39,8 @@ export const firebaseConfig = {
     AboutPage,
     ContactPage,
     HomePage,
-      TabsPage
+      TabsPage,PostPage,
+    LoginPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
